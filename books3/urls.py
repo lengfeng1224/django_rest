@@ -1,3 +1,6 @@
-from rest_framework.routers import Route
-from .serializers import BookInfoSerializer
-urlpatterns=[]
+from django.conf.urls import url
+from . import views
+
+urlpatterns=[
+    url(r'^books/$',views.BookListView.as_view()),
+]

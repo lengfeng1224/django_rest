@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/v1.0/',include('books.urls')),
     url(r'^api/v2.0/',include('books2.urls')),
+    url(r'^api/v3.0/',include('books3.urls')),
 ]
