@@ -14,7 +14,7 @@ class BookInfoSerializer(serializers.Serializer):
     bpub_date = serializers.DateField(label='发布日期', required=False)
     bread = serializers.IntegerField(label='阅读量', required=False)
     bcomment = serializers.IntegerField(label='评论量', required=False)
-    image = serializers.ImageField(label='图片', required=False)
+
 
     # 查看图书中所有英雄
     heroinfo_set = serializers.PrimaryKeyRelatedField(read_only=True, many=True)  # 新增
