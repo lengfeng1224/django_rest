@@ -7,6 +7,7 @@ from . import views_fourchildclass
 # 使用视图集
 from . import views_ViewSet
 from . import views_ViewSet_Generic
+from . import views_ViewSet_ModelView
 
 urlpatterns=[
     # views_APIView
@@ -27,7 +28,11 @@ urlpatterns=[
     # url(r'^books/$', views_ViewSet.BookListView.as_view({'get': 'list', 'post': 'create'})),
 
     # GenericViewSet
-    url(r'^books/$', views_ViewSet.BookListView.as_view({'get': 'list', 'post': 'create'})),
+    # url(r'^books/$', views_ViewSet.BookListView.as_view({'get': 'list', 'post': 'create'})),
+
+    # ModelViewSet
+    url(r'^books/$',views_ViewSet_ModelView.BookListView.as_view({'get':'list','post':'create'})),
+    url(r'^books/(?P<pk>\d+)/$',views_ViewSet_ModelView.BookView.as_view({'put':'partial_update','get':'retrieve','delete':'destroy'}))
 
 
 ]
